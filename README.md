@@ -1,2 +1,3 @@
 # ReactUdemy
- This is a 
+ This is a folder to store the examples from the 
+ React course from Udemy. 
