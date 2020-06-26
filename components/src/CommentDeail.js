@@ -20,4 +20,4 @@ const CommentDetail = () => {
   );
 };
 
-export CommentDetail;
+export default CommentDetail;

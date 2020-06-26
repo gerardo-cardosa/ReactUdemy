@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CommponentDetail from 'CommentDetail';
+import CommponentDetail from './CommentDeail';
 
 const App = () => {
     return (
