@@ -5,18 +5,13 @@ import ReactDOM from 'react-dom';
 class App extends React.Component {
 
   render(){
-    let pos = ''
     window.navigator.geolocation.getCurrentPosition(
       // call backs success
-      (position) => {
-        console.log(position)
-        pos = position.coords.latitude;
-      },
+      (position) => console.log(position),
       //fail call back
       (err) => console.log(err)
-  
     );
-    return <div>Latitude: {pos}</div>
+    return <div>Latitude: </div>
   }
 }
 
