@@ -24,8 +24,7 @@ class App extends React.Component {
     );
   }
 
-  // This is a reequirement from React
-  render(){
+  renderContent(){
       if(this.state.errorMessage && !this.state.lat){
         return <div>Error: {this.state.errorMessage}</div>
       }
@@ -35,6 +34,15 @@ class App extends React.Component {
       }
 
       return <Spinner text="Allow location"/>
+    }
+
+    // This is a reequirement from React
+  render(){
+      return (
+        <div className="border red">
+          {this.renderContent()}
+        </div>
+      );
   }
 }
 
