@@ -3,16 +3,12 @@ import VideoItem from './VideoItem';
 
 class VideoList extends React.Component{
 
-    onVideoSelected = (video) => {
-        this.props.onVideoSelected(video);
-    }
-
     render(){
-        const videos = this.props.videos.map( video => {
-            return <VideoItem key={ video.etag} video={video} onVideoSelected={ this.onVideoSelected }/>
+        const videosList = this.props.videos.map( video => {
+            return <VideoItem key={ video.etag} video={video} onVideoSelected={ this.props.onVideoSelected }/>
         });
 
-        return <div className="" >{ videos }</div>
+        return <div className="ui relaxed divided list" >{ videosList }</div>
     };
 }
 
