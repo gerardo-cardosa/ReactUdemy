@@ -16,9 +16,9 @@ class VideoItem extends React.Component{
                     <div className="header">
                         {title}
                     </div>
-                    <div className="description">
+                    {/* <div className="description">
                         {description}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );
