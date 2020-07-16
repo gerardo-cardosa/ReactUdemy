@@ -16,8 +16,6 @@ class VideDetail extends React.Component {
             width="560"
             height="315"
             src={videoSrc}
-            frameBorder="0"
-            allowFullscreen
           ></iframe>
         </div>
 
