@@ -1,52 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import SeasonDisplay from './SeasonDisplay';
-import Spinner from './Spinner';
+import React from "react";
+import ReactDOM from "react-dom";
+import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 //Extending from React.Component to integrate React functionality
 class App extends React.Component {
-  state = {lat: null, long: 40, errorMessage: ''};
+  state = { lat: null, long: 40, errorMessage: "" };
 
   // Lifecycle React component
-  componentWillMount(){
+  componentWillMount() {
     window.navigator.geolocation.getCurrentPosition(
       // call backs success
       (position) => {
-        console.log(position)
-         this.setState({lat: position.coords.latitude})
-        
+        console.log(position);
+        this.setState({ lat: position.coords.latitude });
       },
       //fail call back
       (err) => {
         console.log(err);
-        this.setState({errorMessage: err.message});
+        this.setState({ errorMessage: err.message });
       }
     );
   }
 
-  renderContent(){
-      if(this.state.errorMessage && !this.state.lat){
-        return <div>Error: {this.state.errorMessage}</div>
-      }
-
-      if(!this.state.errorMessage && this.state.lat){
-        return <SeasonDisplay lat={this.state.lat}/>
-      }
-
-      return <Spinner text="Allow location"/>
+  renderContent() {
+    if (this.state.errorMessage && !this.state.lat) {
+      return <div>Error: {this.state.errorMessage}</div>;
     }
 
-    // This is a reequirement from React
-  render(){
-      return (
-        <div className="border red">
-          {this.renderContent()}
-        </div>
-      );
+    if (!this.state.errorMessage && this.state.lat) {
+      return <SeasonDisplay lat={this.state.lat} />;
+    }
+
+    return <Spinner text="Allow location" />;
+  }
+
+  // This is a reequirement from React
+  render() {
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
-ReactDOM.render(
-    <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById("root"));
