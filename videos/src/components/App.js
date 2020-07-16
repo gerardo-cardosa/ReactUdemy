@@ -7,10 +7,14 @@ import VideoList from './VideoList';
 class App extends React.Component{
     state ={};
 
+    onSearchSubmit = async (term)=> {
+        console.log(term);
+    }
+
     render(){
         return (
             <div className="ui container">
-                <SearchBar />            
+                <SearchBar onSubmit={ this.onSearchSubmit }/>            
             </div>
             
         );
