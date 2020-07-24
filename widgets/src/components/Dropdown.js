@@ -49,6 +49,9 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
           </div>
         </div>
       </div>
+      <div className={`ui ${selected.value} image label`}>
+        {selected.label}
+      </div>
     </div>
   );
 };
