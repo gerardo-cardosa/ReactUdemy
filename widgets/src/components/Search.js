@@ -4,7 +4,9 @@ import axios from "axios";
 const Search = () => {
   const [term, setTerm] = useState("Programming");
   const [results, setResults] = useState([]);
+  const [debauncedTerm, setDebouncedTerm] = useState("Programming");
 
+  
 
   /* First argument is a function.
        Second Argument controls when it is executed
@@ -17,34 +19,51 @@ const Search = () => {
                 last render
     */
   useEffect(() => {
+    const timerId= setTimeout(()=>{
+      setDebouncedTerm(term);
+    }, 1000);
+
+    return ()=>{
+      clearTimeout(timerId);
+    }
+
+  }, [term]);
+
+  useEffect(()=>{
     const search = async () => {
-      const {data} = await axios.get("https://en.wikipedia.org/w/api.php", {
+      const { data } = await axios.get("https://en.wikipedia.org/w/api.php", {
         params: {
           action: "query",
           list: "search",
           format: "json",
           origin: "*",
-          srsearch: term,
+          srsearch: debauncedTerm,
         },
       });
-
       setResults(data.query.search);
     };
 
     search();
-  }, [term]);
+
+  }, [debauncedTerm]);
 
   const renderResults = results.map((result) => {
-      return (
-            <div className="item" key={result.pageid}>
-                <div className="content">
-                    <div className="header">
-                        {result.title}
-                    </div>
-                    <span dangerouslySetInnerHTML={{ __html: result.snippet}}></span>
-                </div>
-            </div>
-      );
+    return (
+      <div className="item" key={result.pageid}>
+        <div className="right floated content">
+          <a
+            className="ui button"
+            href={`http://en.wikipedia.org?curid=${result.pageid}`}
+          >
+            Go
+          </a>
+        </div>
+        <div className="content">
+          <div className="header">{result.title}</div>
+          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+        </div>
+      </div>
+    );
   });
 
   return (
@@ -59,9 +78,7 @@ const Search = () => {
           />
         </div>
       </div>
-      <div className="ui celled list">
-            {renderResults}
-      </div>
+      <div className="ui celled list">{renderResults}</div>
     </div>
   );
 };
