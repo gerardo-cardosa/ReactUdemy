@@ -4,7 +4,7 @@ import axios from "axios";
 const Search = () => {
   const [term, setTerm] = useState("Programming");
   const [results, setResults] = useState([]);
-  const [debauncedTerm, setDebouncedTerm] = useState("Programming");
+  const [debauncedTerm, setDebouncedTerm] = useState(term);
 
   
 
