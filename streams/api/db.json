@@ -1,5 +1,22 @@
 {
   "streams": [
-    
+    {
+      "title": "New Stream",
+      "description": "New Stream with user ID",
+      "userId": "105030113858631396203",
+      "id": 1
+    },
+    {
+      "title": "Second Stream",
+      "description": "New Stream with user ID",
+      "userId": "105030113858631396203",
+      "id": 2
+    },
+    {
+      "title": "Third Stream",
+      "description": "Third Id that I didn't create",
+
+      "id": 3
+    }
   ]
 }
