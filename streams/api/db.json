@@ -1,27 +1,28 @@
 {
   "streams": [
     {
-      "title": "New Stream",
-      "description": "New Stream with user ID",
+      "title": "fsfgsdfg",
+      "description": "sdfgsdfgsfdg sdfg sdfg sdfgs dfg",
       "userId": "105030113858631396203",
       "id": 1
     },
     {
-      "title": "Second Stream",
-      "description": "New Stream with user ID",
+      "title": "sfgsdfgsdfgsd",
+      "description": " sfgsdfgsdfgsdfgsdfgsdfgsdf",
       "userId": "105030113858631396203",
       "id": 2
     },
     {
-      "title": "Third Stream",
-      "description": "Third Id that I didn't create",
+      "title": "sfgsdfgsdfgsdfgsdfgsdfgs",
+      "description": "ssdfgsdfgsdfgsdfgsdfg",
+      "userId": "105030113858631396203",
       "id": 3
     },
     {
-      "title": "test",
-      "description": "creating a test for creating a stream with StreamForm",
+      "title": "qwerqewrqe",
+      "description": "qwerqewrqewr",
       "userId": "105030113858631396203",
-      "id": 4
+      "id": 5
     }
   ]
 }
